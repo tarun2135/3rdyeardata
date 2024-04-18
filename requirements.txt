@@ -1,5 +1,3 @@
-matplotlib
 pandas
-plotly
 pyplot
 altair
