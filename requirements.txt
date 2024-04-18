@@ -1,3 +1,2 @@
-pandas
 pyplot
 altair
