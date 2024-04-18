@@ -41,7 +41,7 @@ try:
 
     # Pie chart for Academic Fees
     with col1:
-        st.title("Academic Fees Distribution")
+        
         
         total_fees_paid_academic = df_academic["Academic Fees Paid"].sum()
         total_due_fees_academic = df_academic["Academic Due Fees"].sum()
@@ -63,7 +63,7 @@ try:
         
     # Histograms for Transportation Fees
     with col2:
-        st.title('Transportation Fees Histogram')
+        
         
         hist_paid = alt.Chart(df_transportation).mark_bar().encode(
             alt.X('Transportation Fees Paid', bin=True),
