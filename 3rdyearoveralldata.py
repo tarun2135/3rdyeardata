@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
+import os
 
 # Function to clean the data by removing commas and converting to float
 def clean_data(column):
@@ -14,9 +15,14 @@ st.set_page_config(layout="wide")
 file_path_academic = "All3yr.xlsx"
 file_path_transportation = "All3yr.xlsx"
 
-# Print column names to check
-with pd.ExcelFile(file_path_transportation) as xls:
-    column_names_transportation = xls.sheet_names[0]
+# Check if files exist
+if not os.path.exists(file_path_academic):
+    st.error(f"File not found: {file_path_academic}")
+    st.stop()
+
+if not os.path.exists(file_path_transportation):
+    st.error(f"File not found: {file_path_transportation}")
+    st.stop()
 
 try:
     # Read the specific columns from the Excel file for Academic Fees
